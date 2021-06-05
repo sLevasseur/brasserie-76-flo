@@ -38,7 +38,7 @@ DEBUG = True
     ALLOWED_HOSTS = ["main-sihfszfwcfnhvxog-gtw.qovery.io", "*"]
 else:
     ALLOWED_HOSTS = ["127.0.0.1"]"""
-ALLOWED_HOSTS = ["main-poytvf5udk3t8upi-gtw.qovery.io", "*"]
+ALLOWED_HOSTS = ["main-qeni5vkqvpgdjyvi-gtw.qovery.io", "*"]
 
 # Application definition
 
@@ -115,8 +115,8 @@ DATABASES = {
                 'ENGINE': 'django.db.backends.postgresql_psycopg2',
                 'NAME': 'bakpakdb',
                 'USER': "postgres",
-                'PASSWORD': "ISpRSctPyovsgDqv",
-                'HOST': "bakpakdb-owgp1dutze3nblny-svc.qovery.io",
+                'PASSWORD': "Jp4ywZNYsknWVIuB",
+                'HOST': "bakpakdb-pn39b4azl88anyno-svc.qovery.io",
                 'PORT':  5432,
             },
         }
