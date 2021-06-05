@@ -113,12 +113,12 @@ else:
 DATABASES = {
             'default': {
                 'ENGINE': 'django.db.backends.postgresql_psycopg2',
-                'NAME': 'bakpaker-db',
-                'USER': "postgres",
-                'PASSWORD': "unlkTrFroGFn1AV7",
-                'HOST': "bakpaker-db-ienpoezevvaowarh-svc.qovery.io",
+                'NAME': os.environ.get('QOVERY_DATABASE_BAKPAKER_DB_NAME'),
+                'USER': 'postgres',
+                'PASSWORD': os.environ.get('QOVERY_DATABASE_BAKPAKER_DB_PASSWORD'),
+                'HOST': os.environ.get('QOVERY_DATABASE_BAKPAKER_DB_HOST'),
                 'PORT':  5432,
-            },
+            }
         }
 # Password validation
 # https://docs.djangoproject.com/en/3.1/ref/settings/#auth-password-validators

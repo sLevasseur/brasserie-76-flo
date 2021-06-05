@@ -5,7 +5,7 @@ application:
   publicly_accessible: true
 databases:
   - type: postgresql
-    name: bakpaker-db
+    name: bakpakerdb
     version: "12.6.0"
 routers:
   - name: main
