@@ -1,6 +1,6 @@
 application:
-  name: brasserie-bakpaker
-  project: brasserie-bakpaker
+  name: brasserie-76-flo
+  project: brasserie-76-flo
   port: 8000
   publicly_accessible: true
 databases:
@@ -10,6 +10,6 @@ databases:
 routers:
   - name: main
     routes:
-      - application_name: brasserie-bakpaker
+      - application_name: brasserie-76-flo
         paths:
           - /

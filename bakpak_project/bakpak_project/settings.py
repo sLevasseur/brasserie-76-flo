@@ -114,9 +114,9 @@ DATABASES = {
             'default': {
                 'ENGINE': 'django.db.backends.postgresql_psycopg2',
                 'NAME': 'bakpakdb',
-                'USER': "postgres",
-                'PASSWORD': "Jp4ywZNYsknWVIuB",
-                'HOST': "bakpakdb-pn39b4azl88anyno-svc.qovery.io",
+                'USER': os.environ.get('QOVERY_DATABASE_BAKPAKDB_USERNAME'),
+                'PASSWORD': os.environ.get('QOVERY_DATABASE_BAKPAKDB_PASSWORD'),
+                'HOST': os.environ.get('QOVERY_DATABASE_BAKPAKDB_HOST'),
                 'PORT':  5432,
             },
         }
