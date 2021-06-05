@@ -1,0 +1,55 @@
+<!-- Script to initialize the map-->
+<script language="javascript" >
+    function init() {
+        var positions = JSON.parse("{{ map_positions|escapejs }}");
+        var map = new L.Map('map');
+        var marker_icon = L.Icon.extend({
+            options: {
+                iconSize:     [70, 70],
+                iconAnchor:   [25, 70],
+                popupAnchor:  [-3, -76]
+            }
+        })
+
+        L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
+            attribution: '&copy; <a href="https://openstreetmap.org">OpenStreetMap</a> contributors',
+            maxZoom: 18
+        }).addTo(map);
+        var normandie = new L.LatLng(49.7171682165637, 1.238358383189674);
+        map.setView(normandie, 8);
+        for (var i = 0; i < positions.length; i++) {
+            var location = positions[i];
+            var lat = location["lat"];
+            var long = location["long"];
+           
+            var location_ = location["name_of_location"];
+            var adresse = location["adresse"];
+            var code_postal = location["code_postal"];
+            var localite = location["localite"];
+            var info = location["informations_supplementaires"];
+            var text = `<p><strong> ${location_} </ strong> <br /><hr> ${adresse}, ${code_postal} ${localite} <br /> <hr> ${info}</p>`;
+            var icon;
+            console.log(location["categorie"])
+                switch(location["categorie"]) {
+                    case 'Restaurant':
+                        var icon = new marker_icon({iconUrl:'/../static/bakpak_website/img/map-markers/marker-resto.svg'});
+                        break;
+                    case 'Brasserie':
+                        var icon = new marker_icon({iconUrl:'/../static/bakpak_website/img/map-markers/Logo_K_Bakpak2.png'});
+                        break;
+                    case 'Bar':
+                        var icon = new marker_icon({iconUrl:'/../static/bakpak_website/img/map-markers/marker-bar.svg'});
+                        break;
+                    case 'Marche':
+                        var icon = new marker_icon({iconUrl:'/../static/bakpak_website/img/map-markers/marker-marche.svg'});
+                        break;
+                } 
+            console.log(icon)      
+            var markerLocation = new L.latLng(lat, long);
+            var marker = new L.Marker(markerLocation, {icon: icon}).addTo(map)
+            map.addLayer(marker);
+            marker.bindPopup(text);
+            
+        }
+    }
+</script>

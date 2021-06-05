@@ -1,0 +1,517 @@
+﻿<!DOCTYPE html>
+<html lang="fr-fr">
+
+<head>
+    <meta name="viewport">
+    {% load static %}
+    {% include "./head.html" %}
+</head>
+
+<body id="hautdepage" onLoad="javascript:init();">
+    <div class="brand">Brasserie Bakpaker</div>
+    <div class="address-bar">Bières Normandes houblonnées</div>
+
+    <!-- Navigation -->
+    {% include "./nav.html" %}>
+
+
+    <div class=".container-md" id="container_banniere">
+        <div class="row">
+            <div class="box">
+                <div>
+                    <div class="col-lg-12 text-center">
+                        <h2 class="brand-before">
+                            <h3>Bienvenue</h3>
+                        </h2>
+                        <hr class="tagline-divider">
+                        <br />
+                        <div id="carousel-example-generic" class="carousel slide banner">
+                            <!-- Wrapper for slides -->
+                            <div class="parent">
+                                <div class="carousel-inner">
+                                    <div class="item active embed-responsive embed-responsive-16by9">
+                                        <video autoplay loop muted playsinline>
+                                            <source src="../static/bakpak_website/blog_img/coast_Trim.mp4" type="video/mp4">
+                                        </video>
+                                    </div>
+                                    <div class="item  embed-responsive embed-responsive-16by9">
+                                        <video autoplay loop muted playsinline>
+                                            <source class="lazy-load" src="../static/bakpak_website/blog_img/drone_Trim.mp4" type="video/mp4">
+                                        </video>
+                                    </div>
+                                    <div class="item  embed-responsive embed-responsive-16by9">
+                                        <video autoplay loop muted playsinline>
+                                            <source class="lazy-load" src="../static/bakpak_website/blog_img/walk_Trim.mp4" type="video/mp4">
+                                        </video>
+                                    </div>
+                                 </div>
+                                <div>
+                                    <img id="banniereBakpak" class="img-responsive img-full" src="../static/bakpak_website/img/bakpak2-16-9-resize.png" />
+                                </div>
+                            </div>
+                            <!-- Controls -->
+
+                            <a class="left carousel-control" href="#carousel-example-generic" data-slide="prev">
+                                <span class="icon-prev"></span>
+                            </a>
+                            <a class="right carousel-control" href="#carousel-example-generic" data-slide="next">
+                                <span class="icon-next"></span>
+                            </a>
+                        </div>
+                        <hr class="tagline-divider">
+                        <br />
+
+                        <h3>
+                            <strong>La bière qui fait voyager vos papilles !</strong>
+                        </h3>
+                        <div class="flex-container">
+                            <div>
+                                <img class="img-values inner-flex-container lazy-load" data-sr="flip-b" data-src="../static/bakpak_website/img/Icon_prez/Brasserie Bakpaker (1)-transparent.png" alt="production normande">
+                                <div>
+                                    <h3 class="text-center">Production normande</h3>
+                                </div>
+                            </div>
+                            <div>
+                                <img class="img-values inner-flex-container lazy-load" data-sr="flip-b" data-src="../static/bakpak_website/img/Icon_prez/noun_bio_2757449.png" alt="production bio">
+                                <div>
+                                    <h3 class="text-center">Production écologique</h3>
+                                </div>
+                            </div>
+                            <div>
+                                <img class="img-values inner-flex-container lazy-load" data-sr="flip-b" data-src="../static/bakpak_website/img/Icon_prez/noun_hop_2792565.png" alt="production houblonnées">
+                                <div>
+                                    <h3 class="text-center">Production houblonnée</h3>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+
+        <div class="row" id="ancre_apropos">
+            <div class="box">
+                <div>
+                    <hr>
+                    <h2 class="intro-text text-center">
+                        <strong>A propos</strong>
+                    </h2>
+                    <hr>
+                    <div class="col-lg-3">
+                        <img class="img-responsive img-border img-left" src="../static/bakpak_website/img/apropos_flo.jpg" alt="">
+                    </div>
+                    <hr class="visible-xs">
+                    <div class="col-lg-9">
+                        <p>La brasserie Bakpaker c'est avant tout un voyage. <br /> </p>
+                        <p class="text-justify">
+                            Un tour du monde effectué par Florian en 2016 lui ouvre l'esprit et lui donne le temps de penser à la suite. Une introspection.
+                            Avec un bagage d'ingénieur qui sonne de plus en plus faux, il brasse en tant qu'amateur pendant 5 ans et se forme chez les brasseurs de la région avant de penser à concrétiser l'idée et devenir professionnel.
+                            Puisque la photographie et le voyage l'ont passionné pendant 1 an de sa vie, il a voulu donner à sa bière ce dernier thème.<br />
+                            Anciennement <a rel="noopener" href="https://lenormanditinerant.blogspot.com/" target="_blank">Normand itinérant</a>, Florian vous propose aujourd'hui de déguster ses bières dans sa Normandie natale avec l'envie aussi de vous faire voyager.
+                            Il a peaufiné les arômes de ses bières pour aujourd'hui vous faire ressentir le frisson d'un beau paysage à travers des arômes fins de houblons délicatement sélectionnés. <br />
+                        </p>
+
+                        <br />
+                    </div>
+
+                </div>
+                <p class="text-center">Bonne visite et bonne dégustation. <br /></p>
+            </div>
+        </div>
+
+        <div class="row" id="ancre_galerie">
+            <div class="box">
+                <hr>
+                    <h2 class="intro-text text-center">
+                        <strong>Galerie :</strong>
+                    </h2>
+                    <hr>
+
+                    <div class="flex-container">
+                        <div>
+                            <button class="btn btn-link" type="button" data-toggle="modal" data-sr="flip-b" data-target="#modal-carousel-blanche">
+                                <img class="img-responsive img-galerie lazy-load"  data-src="../static/bakpak_website/img/beer_presentation/Etiquette_pub_Blanche_prez.jpg" alt="biere_blanche">
+                            </button>
+                        </div>
+                        <div>
+                            <button class="btn btn-link" type="button" data-toggle="modal" data-sr="flip-b" data-target="#modal-carousel-amber">
+                                <img class="img-responsive img-galerie lazy-load" data-src="../static/bakpak_website/img/beer_presentation/Etiquette_pub_Amber_prez.jpg" alt="biere_amber">
+                            </button>
+                        </div>
+                        <div>
+                            <button class="btn btn-link" type="button" data-toggle="modal" data-sr="flip-b" data-target="#modal-carousel-ipa">
+                                <img class="img-responsive img-galerie lazy-load" data-src="../static/bakpak_website/img/beer_presentation/Etiquette_pub_IPA_prez.jpg" alt="biere_ipa">
+                            </button>
+                        </div>
+                        <div>
+                            <button class="btn btn-link" type="button" data-toggle="modal" data-sr="flip-b" data-target="#modal-carousel-stout">
+                                <img class="img-responsive img-galerie lazy-load" data-src="../static/bakpak_website/img/beer_presentation/Etiquette_pub_Stout_prez.jpg" alt="biere_stout">
+                            </button>
+                        </div>
+
+                    </div>
+
+                    <div class="modal fade" id="modal-carousel-blanche" tabindex="-1" role="dialog" aria-labelledby="myLargeModalLabel">
+                        <div class="modal-dialog modal-lg" role="document">
+                          <div class="modal-content">
+                            <div id="biere_blanche" class="carousel slide" data-ride="carousel">
+                              
+                                <!-- Wrapper for slides -->
+                                <div class="carousel-inner" role="listbox">
+                                  <div class="item active">
+                                    <img src="../static/bakpak_website/img/beer_presentation/Etiquette_pub_Blanche_prez.jpg" alt="biere-blanche-carousel-1">
+                                    <div class="carousel-caption">
+                                      <p>Un champ de houblons en fleurs</p>
+                                    </div>
+                                  </div>
+                                  <div class="item">
+                                    <img src="../static/bakpak_website/img/beer_presentation/Photo_pub_Blanche.jpg" alt="biere-blanche-carousel-2">
+                                    <div class="carousel-caption">
+                                        <p>Un champ de houblons en fleurs</p>
+                                    </div>
+                                  </div>
+                                </div>
+                              
+                                <!-- Controls -->
+                                <a class="left carousel-control" href="#biere_blanche" role="button" data-slide="prev">
+                                  <span class="glyphicon glyphicon-chevron-left" aria-hidden="true"></span>
+                                  <span class="sr-only">Previous</span>
+                                </a>
+                                <a class="right carousel-control" href="#biere_blanche" role="button" data-slide="next">
+                                  <span class="glyphicon glyphicon-chevron-right" aria-hidden="true"></span>
+                                  <span class="sr-only">Next</span>
+                                </a>
+                              </div>
+                          </div>
+                        </div>
+                      </div>
+                      <div class="modal fade" id="modal-carousel-amber" tabindex="-1" role="dialog" aria-labelledby="myLargeModalLabel">
+                        <div class="modal-dialog modal-lg" role="document">
+                          <div class="modal-content">
+                            <div id="biere_amber" class="carousel slide" data-ride="carousel">
+                              
+                                <!-- Wrapper for slides -->
+                                <div class="carousel-inner" role="listbox">
+                                  <div class="item active">
+                                    <img src="../static/bakpak_website/img/beer_presentation/Etiquette_pub_Amber_prez.jpg" alt="biere-amber-carousel-1">
+                                    <div class="carousel-caption">
+                                      <p>Coucher de soleil au Cambodge</p>
+                                    </div>
+                                  </div>
+                                  <div class="item">
+                                    <img src="../static/bakpak_website/img/beer_presentation/Photo_pub_Amber.jpg" alt="biere-amber-carousel-2">
+                                    <div class="carousel-caption">
+                                      <p>Coucher de soleil au Cambodge</p>
+                                    </div>
+                                  </div>
+                                </div>
+                              
+                                <!-- Controls -->
+                                <a class="left carousel-control" href="#biere_amber" role="button" data-slide="prev">
+                                  <span class="glyphicon glyphicon-chevron-left" aria-hidden="true"></span>
+                                  <span class="sr-only">Previous</span>
+                                </a>
+                                <a class="right carousel-control" href="#biere_amber" role="button" data-slide="next">
+                                  <span class="glyphicon glyphicon-chevron-right" aria-hidden="true"></span>
+                                  <span class="sr-only">Next</span>
+                                </a>
+                              </div>
+                          </div>
+                        </div>
+                      </div>
+                      <div class="modal fade" id="modal-carousel-ipa" tabindex="-1" role="dialog" aria-labelledby="myLargeModalLabel">
+                        <div class="modal-dialog modal-lg" role="document">
+                          <div class="modal-content">
+                            <div id="biere_ipa" class="carousel slide" data-ride="carousel">
+                              
+                                <!-- Wrapper for slides -->
+                                <div class="carousel-inner" role="listbox">
+                                  <div class="item active">
+                                    <img src="../static/bakpak_website/img/beer_presentation/Etiquette_pub_IPA_prez.jpg" alt="biere-ipa-carousel-1">
+                                    <div class="carousel-caption">
+                                      <p>Route des arômes</p>
+                                    </div>
+                                  </div>
+                                  <div class="item">
+                                    <img src="../static/bakpak_website/img/beer_presentation/Photo_pub_IPA.jpg" alt="biere-ipa-carousel-2">
+                                    <div class="carousel-caption">
+                                        <p>Route des arômes</p>
+                                    </div>
+                                  </div>
+                                </div>
+                              
+                                <!-- Controls -->
+                                <a class="left carousel-control" href="#biere_ipa" role="button" data-slide="prev">
+                                  <span class="glyphicon glyphicon-chevron-left" aria-hidden="true"></span>
+                                  <span class="sr-only">Previous</span>
+                                </a>
+                                <a class="right carousel-control" href="#biere_ipa" role="button" data-slide="next">
+                                  <span class="glyphicon glyphicon-chevron-right" aria-hidden="true"></span>
+                                  <span class="sr-only">Next</span>
+                                </a>
+                              </div>
+                          </div>
+                        </div>
+                      </div>
+                      <div class="modal fade" id="modal-carousel-stout" tabindex="-1" role="dialog" aria-labelledby="myLargeModalLabel">
+                        <div class="modal-dialog modal-lg" role="document">
+                          <div class="modal-content">
+                            <div id="biere_stout" class="carousel slide" data-ride="carousel">
+                              
+                                <!-- Wrapper for slides -->
+                                <div class="carousel-inner" role="listbox">
+                                  <div class="item active">
+                                    <img src="../static/bakpak_website/img/beer_presentation/Etiquette_pub_Stout_prez.jpg" alt="biere-stout-carousel-1">
+                                    <div class="carousel-caption">
+                                      <p>Au sommet du volcan</p>
+                                    </div>
+                                  </div>
+                                  <div class="item">
+                                    <img src="../static/bakpak_website/img/beer_presentation/Photo_pub_Stout.jpg" alt="biere-stout-carousel-2">
+                                    <div class="carousel-caption">
+                                        <p>Au sommet du volcan</p>
+                                    </div>
+                                  </div>
+                                </div>
+                              
+                                <!-- Controls -->
+                                <a class="left carousel-control" href="#biere_stout" role="button" data-slide="prev">
+                                  <span class="glyphicon glyphicon-chevron-left" aria-hidden="true"></span>
+                                  <span class="sr-only">Previous</span>
+                                </a>
+                                <a class="right carousel-control" href="#biere_stout" role="button" data-slide="next">
+                                  <span class="glyphicon glyphicon-chevron-right" aria-hidden="true"></span>
+                                  <span class="sr-only">Next</span>
+                                </a>
+                              </div>
+                          </div>
+                        </div>
+                      </div>
+                    <div class="boutique-link">
+                        <p class="text-center">🍺 Intéssé(e)? N'hésitez pas à visiter la <a rel="noopener" href="https://shop.easybeer.fr/brasserie-bakpaker" target="_blank">boutique Bakpaker</a> ! 🍺</p>
+                    </div>
+            </div>
+        </div>
+
+
+        <div class="row" id="ancre_actualites">
+
+            <div class="box ">
+                <div class="col-lg-12">
+                    <hr>
+                    <h2 class="intro-text text-center">
+                        <strong>Actualités</strong>
+                    </h2>
+                    <hr>
+                    <p class="text-center">
+                        <strong>La dernière en date :</strong>
+                    </p>
+                    <div>
+                       <hr class="visible-xs">
+                        <div>
+                            <div class="text-justify toggle_text" style="white-space: pre-line">
+                                <p>{{facebook_post.text|safe}}</p>
+                            </div>
+                            <div id="carousel-example-generic2" class="carousel slide carousel-firstpost" data-ride="carousel">
+                                <!-- Wrapper for slides -->
+                                    <div class="carousel-inner" role="listbox">
+                                        {% for picture in facebook_post.all_picture_s %}
+                                            {% if picture.type_of_media == "photo" %}
+
+                                                <div class="item {% if forloop.counter == 1 %}active{% endif %}">
+                                                    <center>
+                                                        <img class="img-responsive img-width-80 " src="{{picture.src}}" alt="photo_from_facebook">
+                                                        <div class="carousel-caption">
+                                                            <p>{{picture.description|safe}}</p>
+                                                        </div>
+                                                    </center>
+                                                </div>
+
+                                            {% endif %}
+                                        {% endfor %}
+                                    </div>
+                                
+                                {% if check_picture == "photo" %}
+                                <!-- Controls -->
+                                <div>
+                                    <a class="left carousel-control" href="#carousel-example-generic2" role="button" data-slide="prev">
+                                      <span class="glyphicon glyphicon-chevron-left" aria-hidden="true"></span>
+                                      <span class="sr-only">Précédent</span>
+                                    </a>
+                                </div>
+                                <div>
+                                    <a class="right carousel-control" href="#carousel-example-generic2" role="button" data-slide="next">
+                                      <span class="glyphicon glyphicon-chevron-right " aria-hidden="true"></span>
+                                      <span class="sr-only ">Suivant</span>
+                                    </a>
+                                </div>
+                                {% endif %}
+                            </div>
+                    
+                            <br />
+                        </div>
+                            <center>
+                            {% for video in facebook_post.all_video_s %}
+                                {% if "video" in video.type_of_media %}
+                                <div style="max-width:80%;margin-bottom:2%;">
+                                    <div class="fb-video" data-href="https://www.facebook.com/facebook/videos/{{video.src}}/" data-show-text="false">
+                                        <div class="fb-xfbml-parse-ignore">
+                                          <blockquote cite="https://www.facebook.com/facebook/videos/{{video.src}}/">
+                                            <a href="https://www.facebook.com/facebook/videos/{{video.src}}/">Brasserie Bakpaker</a>
+                                            Posté par <a href="https://www.facebook.com/BrasserieBakpaker">Bakpaker</a>
+                                            <small> 
+                                                Si vous voyer ce message, c'est que vos bloqueurs de publicité ou de trackers bloquent les liens Facebook.
+                                                Facebook peut faire peur, mais le site de la Brasserie Bakpaker n'utilise aucun cookie tiers pour revendre vos données.
+                                                Donc pour profiter pleinement du site internet, vous pouvez désactiver les plugins concernés.
+                                            </small>
+                                          </blockquote>
+                                        </div>
+                                      </div>
+                                    </div>
+                                {% endif %}
+                            {% endfor %}
+                            </center>
+
+
+                        <div class="row">
+                            <div class="col-md-6 col-sm-6 col-xs-6 col-lg btn-group" role="group">
+                                <button class="btn btn-default" type="button" target="_blank" onclick="window.location.href='{{facebook_post.link_to_post}}'">
+                                    Lien direct
+                                </button>
+
+                            </div>
+                            <div class="col-md-6 col-sm-6 col-xs-6 col-lg">
+                                <p class="text-right">Posté le : {{ facebook_post.creation_time }}</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="text-center" id="ancre_newsletter">
+                    <br />
+                    <br />
+                    <hr />
+                    <p><small><a href="/bakpak/blog/">Cliquez ici</a>  pour être redirigé vers toutes nos actualités !</small></p>
+                    <div id="ancre_newsletter_message">
+                        <small>
+                            Pour s'inscrire à la newsletter et être tenu au courant
+                            de nos derniéres actualités (promis, pas de spam &#128578; ) :
+                        </small>
+                        <br />
+
+                        <br />
+                        {% if message_newsletter %}
+                            {% if state == True %}
+                            <div class="subscribe_success">
+                                <span class="closebtn" onclick="this.parentElement.style.display='none';">&times;</span>
+                                <p>{{message_newsletter|safe}}</p>
+                            </div>
+                            {% else %}
+                            <div class="subscribe_failed">
+                                <span class="closebtn" onclick="this.parentElement.style.display='none';">&times;</span>
+                                <p>{{message_newsletter|safe}}</p>
+
+                                <br />
+                            </div>
+                            {% endif %}
+                        {% endif %}
+                    </div>
+                    
+                    <form action="/bakpak/#ancre_newsletter_message" method="post">
+                        {% csrf_token %}
+                        {{ newsletter_form.as_p }}
+                        <br />
+                        <input type="submit" value="Inscription" name="newsletter_form">
+                    </form>
+
+                </div>
+            </div>
+        </div>
+        <div class="row" id="ancre_nous_trouver">
+            <div class="box">
+                <div class="col-lg-12 text-center">
+                    <hr>
+                    <h2 class="intro-text text-center">
+                        <strong>Points de vente:</strong>
+                    </h2>
+                    <div id="map" style="width:100%; height:550px;"></div>
+                </div>
+            </div>
+        </div>
+        <div class="row text-center" id="ancre_contact">
+            <div class="box">
+                <div class="col-lg-12">
+                    <hr>
+                    <h2 class="intro-text text-center">
+                        <strong>Contact</strong>
+                    </h2>
+                    <hr>
+                    <h3>Pour nous écrire:</h3>
+                    {% if message_contact %}
+                        {% if state %}
+                        <div class="subscribe_success">
+                            <span class="closebtn" onclick="this.parentElement.style.display='none';">&times;</span>
+                            <p >{{message_contact|safe}}</p>
+                        </div>
+                        {% else %}
+                        <div class="subscribe_failed">
+                            <span class="closebtn" onclick="this.parentElement.style.display='none';">&times;</span>
+                            <p >{{message_contact|safe}}</p>
+                        </div>
+                        {% endif %}
+                    {% endif %}
+                        <form class="text-center" action="#ancre_contact" method="post">
+                            {% csrf_token %}
+                            <br />
+                            <div class="contactList text-center">
+                                <p id="subject" class="contact">{{ contact_form.email }}</p>
+                                <p id="email" class="contact">{{ contact_form.sujet }}</p>
+                                <p id="message" class="contact">{{ contact_form.message }}</p>
+                            </div>
+                            <input type="submit" value="Envoyer !" name="contact_form">
+                        </form>
+                </div>
+                <div>
+                    <br />
+                    <div class="button" style="text-align: right;">
+                        <br />
+                        <button class="btn btn-default" type="button" target="_blank" onclick="window.location.href='/bakpak/#hautdepage'">
+                            <span class="glyphicon glyphicon-chevron-up" aria-hidden="true"></span>
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+    </div>
+    <!-- /.container -->
+    {% include "./footer.html" %}
+
+    <!-- jQuery -->
+    <script src="{% static 'bakpak_website/js/jquery.js' %}"></script>
+
+
+    <!-- Bootstrap Core JavaScript -->
+    <script src="{% static 'bakpak_website/js/bootstrap.min.js' %}"></script>
+
+    <!-- Script to Activate the Carousel -->
+    <script>
+        $('.carousel').carousel({
+            interval: 7500 //changes the speed
+        })
+    </script>
+    
+    {% include "./map.html" %}>
+    {% include "./lazyload.html" %}
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <style>
+        html {
+            scroll-behavior: smooth;
+        }
+    </style>
+
+
+</body>
+</html>

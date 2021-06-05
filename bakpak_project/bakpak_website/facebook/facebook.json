@@ -1,0 +1,15 @@
+{
+    "user": {
+        "short_token": "EAAK9F2EQ6owBAH0zUMqTSg6JXvQCwUZC0QVp5O7fnUlNVLFHrUExW0SNULK1gD1TXt8ppyOqvFu7DLnDBeVouCbsSTUA5NBQLDTZCXyJ1MSmbHEqOjP2wqngvMAsKNkFPnt125QIE9uftg56uYoNDEnO8dvnrRWozQS68V5DQj0v2wOPBIUYw0UVsWaQd3BGTo7HNJ0wZDZD",
+        "long_token": "EAAK9F2EQ6owBAP3w2Yiy37YFO9liuIDtkiLTLX1isVgAZCh7nf7jdk3aZB9wE2g2MgyduDHXsCXHl8HH6TakDe71DeQ9KhrHed0UfvWSdXtvNZAgx0q1ciIgQZBL1XP1sFpRDluSTSLbctQo0kYcnhcAvEXrRciKXkDd1zI6mwZDZD"
+    },
+    "app": {
+        "id": "770858063817356",
+        "secret": "3ffdc1cdc8fa45b81a6eeb45be301c71"
+    },
+    "page": {
+        "token": "EAAK9F2EQ6owBAFWWefkGzpUmMscLMzpCtlgA7odafZBjjZBI2vIhk8Jn8nOaq2yf6GJLxMSRt8b7yaww5RWAq8RuuDt5tIqA9mWAUqk4OF9ZAmJDjmR0ZBonc0edMCcDHzwMqbexDvVl4NPJ30C2ZBEP2R996NRdDPFnYd8pWb0GVPwVZCXumZC",
+        "id": "106650790965027"
+    },
+    "sdk_version": "3.0"
+}

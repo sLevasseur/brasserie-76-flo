@@ -1,0 +1,312 @@
+﻿<!DOCTYPE html>
+<html lang="fr-fr">
+
+<head>
+    {% load static %}
+    {% include "./head.html" %}
+</head>
+
+<body onLoad="javascript:init();">
+
+    <div class="brand">Brasserie Bakpaker</div>
+    <div class="address-bar">Bières normandes houblonnées</div>
+
+
+    <!-- Navigation -->
+    {% include "./nav.html" %}
+ 
+    <div class=".container-md">
+        <div class="row">
+            <div class="box">
+                <div>
+                    <hr>
+                    <h2 class="intro-text text-center">
+                        Actualités de la Brasserie
+                        <strong>Bakpaker</strong>
+                    </h2>
+                    <hr> 
+                </div>
+                <div id="ancre_blog">
+                    {% for blog in page_obj %}
+                    {% if forloop.counter|divisibleby:"2" %}
+                        {% if blog.all_picture_s.0.type_of_media == 'None' and blog.all_video_s.0.type_of_media == 'None' %}
+                            <hr>
+                                    <div class="text-justify" style="margin-top:2%;margin-bottom:2%;white-space: pre-line;">
+                                        <p class="map">{{blog.text|safe}} :</p>
+                                    </div>
+                                    <br />
+                                    <div class="row equal">
+                                        <div class="col-xs-6" role="group" aria-label="...">
+                                          <button type="button" class="btn btn-default" onclick="window.location.href='{{blog.link_to_post}}'">
+                                              En savoir plus
+                                          </button>
+                                        </div>
+                                        <div class="col-xs-6">
+                                            <p style="text-align: right;">{{blog.creation_time}}</p>
+                                        </div>
+                                    </div>
+                                    <hr>
+                        {% else %}
+                        <div>
+                            
+                            <div class="row equal">
+                                <div class="col-xs-12 col-md-4 blog-text">
+                                    <div class="text-justify" style="white-space: pre-line">
+                                        <p class="map">{{blog.text|safe}} :</p>
+                                    </div>
+                                    <br />
+                                </div>
+
+                            <div class="col-xs-12 col-md-8" style="margin-bottom:2%" align="center">
+                                <div id="carousel-example-generic{{forloop.counter}}" class="carousel slide carousel-firstpost" data-ride="carousel" data-interval="false">
+                                <!-- Wrapper for slides -->
+                                    <div class="carousel-inner" role="listbox">
+                                        {% for picture in blog.all_picture_s %}
+                                            {% if picture.type_of_media == "photo" %}
+                                                <div class="item {% if forloop.counter == 1 %}active{% endif %}">
+                                                    <center>
+                                                        <img class="img-responsive img-width-80 " src="{{picture.src}}" alt="photo_from_facebook">
+                                                        <div class="carousel-caption">
+                                                            <p>{{picture.description|safe}}</p>
+                                                        </div>
+                                                    </center>
+                                                </div>
+
+                                            {% endif %}
+                                        {% endfor %}
+                                    </div>
+                                </div>
+
+                                {% if blog.all_picture_s.0.type_of_media == "photo" %}
+                                <!-- Controls -->
+                                <div>
+                                    <a class="left carousel-control" href="#carousel-example-generic{{forloop.counter}}" role="button" data-slide="prev">
+                                      <span class="glyphicon glyphicon-chevron-left" aria-hidden="true"></span>
+                                      <span class="sr-only">Précédent</span>
+                                    </a>
+                                </div>
+                                <div>
+                                    <a class="right carousel-control" href="#carousel-example-generic{{forloop.counter}}" role="button" data-slide="next">
+                                      <span class="glyphicon glyphicon-chevron-right " aria-hidden="true"></span>
+                                      <span class="sr-only ">Suivant</span>
+                                    </a>
+                                </div>
+                                {% endif %}
+
+                                {% for video in blog.all_video_s %}
+                                {% if "video" in video.type_of_media %}
+                                        <center>
+                                            <div style="margin-bottom:2%;margin-left:2%;">
+                                                <div class="fb-video" data-href="https://www.facebook.com/facebook/videos/{{video.src}}/" data-show-text="false">
+                                                    <div class="fb-xfbml-parse-ignore">
+                                                      <blockquote cite="https://www.facebook.com/facebook/videos/{{video.src}}/">
+                                                        <a href="https://www.facebook.com/facebook/videos/{{video.src}}/">Brasserie Bakpaker</a>
+                                                        Posté par <a href="https://www.facebook.com/BrasserieBakpaker">Bakpaker</a>
+                                                        <small> 
+                                                            Si vous voyer ce message, c'est que vos bloqueurs de publicité ou de trackers bloquent les liens Facebook.
+                                                            Facebook peut faire peur, mais le site de la Brasserie Bakpaker n'utilise aucun cookie tiers pour revendre vos données.
+                                                            Donc pour profiter pleinement du site internet, vous pouvez désactiver les plugins concernés.
+                                                        </small>
+                                                    </blockquote>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </center>
+                                        <br />
+                                {% endif %}
+                            {% endfor %}
+                            </div>
+                        </div>
+                        <div class="row equal">
+                            <div class="col-xs-6" role="group" aria-label="...">
+                            <button type="button" class="btn btn-default" onclick="window.location.href='{{blog.link_to_post}}'">
+                                En savoir plus
+                            </button>
+                            </div>
+                            <div class="col-xs-6">
+                                <p style="text-align: right;">{{blog.creation_time}}</p>
+                            </div>
+                        </div>
+                        <hr>
+                        
+                            {% endif %}
+                            {% else %}
+                            <div>
+                                {% if blog.all_picture_s.0.type_of_media == 'None' and blog.all_video_s.0.type_of_media == 'None' %}
+                                    <hr>
+                                    <div class="text-justify" style="margin-top:2%;margin-bottom:2%;">
+                                        <p class="map">{{blog.text|safe}} :</p>
+                                    </div>
+                                    <br />
+                                <div class="row equal">
+                                    <div class="col-xs-6" role="group" aria-label="...">
+                                      <button type="button" class="btn btn-default" onclick="window.location.href='{{blog.link_to_post}}'">
+                                          En savoir plus
+                                      </button>
+                                    </div>
+                                    <div class="col-xs-6">
+                                        <p style="text-align: right;">{{blog.creation_time}}</p>
+                                    </div>
+                                </div>
+                                <hr>
+                            {% else %}
+                        
+                                <div class="row equal">
+                                    <div class="visible-xs col-xs-12 col-md-4">
+                                        <div class="text-justify" style="white-space: pre-line">
+                                            <p class="map">{{blog.text|safe}} :</p>
+                                        </div>
+                                        <br />
+                                    </div>
+                                    <div class="col-xs-12 col-md-8" style="margin-bottom:2%" align="center">
+                                        <div id="carousel-example-generic{{forloop.counter}}" class="carousel slide carousel-firstpost" data-ride="carousel" data-interval="false">
+                                        <!-- Wrapper for slides -->
+                                            <div class="carousel-inner" role="listbox">
+                                                {% for picture in blog.all_picture_s %}
+                                                    {% if picture.type_of_media == "photo" %}
+                                                        <div class="item {% if forloop.counter == 1 %}active{% endif %}">
+                                                            <center>
+                                                                <img class="img-responsive img-width-80 " src="{{picture.src}}" alt="photo_from_facebook">
+                                                                <div class="carousel-caption">
+                                                                    <p>{{picture.description|safe}}</p>
+                                                                </div>
+                                                            </center>
+                                                        </div>
+
+                                                    {% endif %}
+                                                {% endfor %}
+                                            </div>
+                                        </div>
+
+                                        {% if blog.all_picture_s.0.type_of_media == "photo" %}
+                                        <!-- Controls -->
+                                        <div>
+                                            <a class="left carousel-control" href="#carousel-example-generic{{forloop.counter}}" role="button" data-slide="prev">
+                                            <span class="glyphicon glyphicon-chevron-left" aria-hidden="true"></span>
+                                            <span class="sr-only">Précédent</span>
+                                            </a>
+                                        </div>
+                                        <div>
+                                            <a class="right carousel-control" href="#carousel-example-generic{{forloop.counter}}" role="button" data-slide="next">
+                                            <span class="glyphicon glyphicon-chevron-right " aria-hidden="true"></span>
+                                            <span class="sr-only ">Suivant</span>
+                                            </a>
+                                        </div>
+                                        {% endif %}
+
+                                        {% for video in blog.all_video_s %}
+                                            {% if "video" in video.type_of_media %}
+                                                <center>
+                                                    <div style="margin-bottom:2%;margin-left:2%;">
+                                                        <div class="fb-video" data-href="https://www.facebook.com/facebook/videos/{{video.src}}/" data-show-text="false">
+                                                            <div class="fb-xfbml-parse-ignore">
+                                                            <blockquote cite="https://www.facebook.com/facebook/videos/{{video.src}}/">
+                                                                <a href="https://www.facebook.com/facebook/videos/{{video.src}}/">Brasserie Bakpaker</a>
+                                                                Posté par <a href="https://www.facebook.com/BrasserieBakpaker">Bakpaker</a>
+                                                                <small> 
+                                                                    Si vous voyer ce message, c'est que vos bloqueurs de publicité ou de trackers bloquent les liens Facebook.
+                                                                    Facebook peut faire peur, mais le site de la Brasserie Bakpaker n'utilise aucun cookie tiers pour revendre vos données.
+                                                                    Donc pour profiter pleinement du site internet, vous pouvez désactiver les plugins concernés.
+                                                                </small>
+                                                            </blockquote>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </center>
+                                                <br />
+                                            {% endif %}
+                                        {% endfor %}
+                                    </div>
+                                    <hr>
+                                    <div class="visible-md visible-lg col-xs-12 col-md-4">
+                                        <div class="text-justify">
+                                            <p class="map">{{blog.text|safe}} :</p>
+                                        </div>
+                                        <br />
+                                    </div>
+                                </div>
+                                <div class="row equal">
+                                    <div class="col-xs-6" role="group" aria-label="...">
+                                      <button type="button" class="btn btn-default" onclick="window.location.href='{{blog.link_to_post}}'">
+                                          En savoir plus
+                                      </button>
+                                    </div>
+                                    <div class="col-xs-6">
+                                        <p style="text-align: right;">{{blog.creation_time}}</p>
+                                    </div>
+                                </div>
+                            <hr>
+                                {% endif %}
+                                {% endif %}
+                                {% endfor %}
+                        </div>
+                    </div>
+                </div>
+                <div class="pagination">
+                    <div class=" step-links">
+                        {% if page_obj.has_previous %}
+                        <div>
+                            <button class="btn btn-default" type="button" onclick="window.location.href='?page=1';">&laquo; début</button>
+                        </div>
+                        <div>
+                            <button class="btn btn-default" type="button" onclick="window.location.href='?page={{ page_obj.previous_page_number }}';">précédent</button>
+                        </div>
+                        {% endif %}
+                        <div>
+                            <span class="current">
+                                 {{ page_obj.number }} / {{ page_obj.paginator.num_pages }}
+                            </span>
+                        </div>
+                        {% if page_obj.has_next %}
+                        <div>
+                            <button class="btn btn-default" type="button"  onclick="window.location.href='?page={{ page_obj.next_page_number }}';">suivant</button>
+                        </div>
+                        <div>
+                            <button class="btn btn-default" type="button" onclick="window.location.href='?page={{ page_obj.paginator.num_pages }}';">fin &raquo;</button>
+                        </div>
+                            {% endif %}
+                    </div>
+                </div>
+                    </div>
+                    
+            </div>
+                
+        </div>
+
+        </div>
+        
+        <div class="row" id="ancre_nous_trouver">
+            <div class="box">
+                <div class="col-lg-12 text-center">
+                    <hr style="margin-bottom:4em">
+                    <h2 class="intro-text text-center">
+                        <strong>Points de vente:</strong>
+                    </h2>
+
+                    <div id="map" style="width:100%; height:550px;" class="item-center"></div>
+                        <div>
+                            <br />
+                            <div class="button" style="text-align: right;">
+                                <br />
+                                <button class="btn btn-default" type="button" target="_blank" onclick="window.location.href='/bakpak/blog/#ancre_blog'">
+                                    <span class="glyphicon glyphicon-chevron-up" aria-hidden="true"></span>
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+            <!-- /.container -->
+            {% include "./footer.html" %}>
+
+            <!-- jQuery -->
+            <script src="{% static 'bakpak_website/js/jquery.js' %}"></script>
+
+            <!-- Bootstrap Core JavaScript -->
+            <script src="{% static 'bakpak_website/js/bootstrap.min.js' %}"></script>
+            {% include "./map.html" %}>
+    
+</body>
+</html>
