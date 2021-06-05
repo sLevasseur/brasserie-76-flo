@@ -113,10 +113,10 @@ else:
 DATABASES = {
             'default': {
                 'ENGINE': 'django.db.backends.postgresql_psycopg2',
-                'NAME': 'bakpakdb',
+                'NAME': 'bakpaker-db',
                 'USER': "postgres",
-                'PASSWORD': "K0yQK4Id2TGz6TOZ",
-                'HOST': "bakpakdb-k3kexcdi7wm96jlc-svc.qovery.io",
+                'PASSWORD': "unlkTrFroGFn1AV7",
+                'HOST': "bakpaker-db-ienpoezevvaowarh-svc.qovery.io",
                 'PORT':  5432,
             },
         }
