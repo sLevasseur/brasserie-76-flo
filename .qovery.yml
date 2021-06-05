@@ -1,6 +1,6 @@
 application:
-  name: brasserie-bakpaker-qovery
-  project: brasserie-bakpaker-qovery
+  name: brasserie-bakpaker
+  project: brasserie-bakpaker
   port: 8000
   publicly_accessible: true
 databases:
@@ -10,6 +10,6 @@ databases:
 routers:
   - name: main
     routes:
-      - application_name: brasserie-bakpaker-qovery
+      - application_name: brasserie-bakpaker
         paths:
           - /
