@@ -113,10 +113,10 @@ else:
 DATABASES = {
             'default': {
                 'ENGINE': 'django.db.backends.postgresql_psycopg2',
-                'NAME': os.environ.get('QOVERY_DATABASE_BAKPAKER_DB_NAME'),
+                'NAME': os.environ.get('QOVERY_DATABASE_BAKPAKERDB_NAME', 'bakpakerdb'),
                 'USER': 'postgres',
-                'PASSWORD': os.environ.get('QOVERY_DATABASE_BAKPAKER_DB_PASSWORD'),
-                'HOST': os.environ.get('QOVERY_DATABASE_BAKPAKER_DB_HOST'),
+                'PASSWORD': os.environ.get('QOVERY_DATABASE_BAKPAKERDB_PASSWORD', "DYgQalROKPY7a8Nh "),
+                'HOST': os.environ.get('QOVERY_DATABASE_BAKPAKERDB_HOST', 'bakpakerdb-htm0c7lp1oqr14qx-svc.qovery.io'),
                 'PORT':  5432,
             }
         }
