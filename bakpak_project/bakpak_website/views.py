@@ -13,7 +13,7 @@ from .serializer import get_gps_coordinates_and_more
 from .facebook import query_facebook_api, token_refresher
 from pathlib import Path
 
-"""class General_data:
+class General_data:
     path_post_data_json = Path(__file__).parent / "./facebook/posts_data.json"
     marker_data = get_gps_coordinates_and_more(CoordinatesMapDB.objects.values_list("name_of_locations",
                                                                                     "adresse",
@@ -137,4 +137,4 @@ class Legal_Stuff(View):
 
     def get(self, request):
         return render(request, "bakpak_website/legal_stuff.html")
-"""
+

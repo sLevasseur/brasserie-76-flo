@@ -3,9 +3,7 @@ from .models import NewsletterDB, CoordinatesMapDB
 from django.http import HttpResponse
 import csv
 
-
 # Register your models here
-
 
 class InfoColumnGPS(admin.ModelAdmin):
     list_display = ['name_of_locations', 'adresse', 'code_postal', 'localite']
@@ -31,6 +29,6 @@ class ExportNewsletter(admin.ModelAdmin):
     actions = [export_to_csv]
 
 
-"""admin.site.register(NewsletterDB, ExportNewsletter)
+admin.site.register(NewsletterDB, ExportNewsletter)
 admin.site.register(CoordinatesMapDB, InfoColumnGPS)
-"""
+
