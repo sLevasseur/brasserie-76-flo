@@ -14,13 +14,13 @@ RUN pip install --upgrade pip
 
 RUN pip install -r requirements.txt
 
-RUN python3 -V
+#RUN python3 -V
 
 RUN python3 ./bakpak_project/manage.py collectstatic --noinput
 
-RUN python3 ./bakpak_project/manage.py makemigrations
+#RUN python3 ./bakpak_project/manage.py makemigrations
 
-RUN python3 ./bakpak_project/manage.py migrate
+#RUN python3 ./bakpak_project/manage.py migrate
 
 EXPOSE 8000
 
