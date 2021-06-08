@@ -32,7 +32,7 @@ SECRET_KEY = "3u-kpk1*1930@zj_vbt59xd9tt84zvnrq!%n7!&l=if_skybcn"
     DEBUG = True
 else:
     DEBUG = True"""
-DEBUG = True
+DEBUG = False
 
 """if os.environ.get('QOVERY_IS_PRODUCTION') == "true":
     ALLOWED_HOSTS = ["main-sihfszfwcfnhvxog-gtw.qovery.io", "*"]
@@ -88,7 +88,17 @@ WSGI_APPLICATION = 'bakpak_project.wsgi.application'
 
 # Database
 # https://docs.djangoproject.com/en/3.1/ref/settings/#databases
-if os.environ.get('ENV') == "PRODUCTION":
+DATABASES = {
+  'default': {
+    'ENGINE': 'django.db.backends.postgresql_psycopg2',
+    'NAME': "bakpakerdb",
+    'USER': "postgres",
+    'PASSWORD': "DYgQalROKPY7a8Nh",
+    'HOST': "bakpakerdb-htm0c7lp1oqr14qx-svc.qovery.io",
+    'PORT': os.environ.get('QOVERY_DATABASE_MY_DB_PORT', 5432),
+  }
+}
+"""if os.environ.get('ENV') == "PRODUCTION":
     DATABASES = {
             'default': {
                 'ENGINE': 'django.db.backends.postgresql_psycopg2',
@@ -109,7 +119,7 @@ else:
             'HOST': 'localhost',
             'PORT': '5432',
         }
-    }
+    }"""
 
 # Password validation
 # https://docs.djangoproject.com/en/3.1/ref/settings/#auth-password-validators
