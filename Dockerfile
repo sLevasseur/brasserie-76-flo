@@ -6,6 +6,9 @@ ENV PYTHONDONTWRITEBYTECODE 1
 
 ENV PYTHONUNBUFFERED 1
 
+ARG ENV=PRODUCTION
+ENV ENV=PRODUCTION
+
 COPY . .
 
 RUN apk update && apk add postgresql-dev gcc python3-dev musl-dev

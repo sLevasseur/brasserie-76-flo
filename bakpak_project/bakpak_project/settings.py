@@ -88,7 +88,7 @@ WSGI_APPLICATION = 'bakpak_project.wsgi.application'
 
 # Database
 # https://docs.djangoproject.com/en/3.1/ref/settings/#databases
-if os.environ.get('QOVERY_IS_PRODUCTION') == "true":
+if os.environ.get('ENV') == "PRODUCTION":
     DATABASES = {
             'default': {
                 'ENGINE': 'django.db.backends.postgresql_psycopg2',
