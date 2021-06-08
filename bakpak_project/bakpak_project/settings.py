@@ -111,15 +111,15 @@ else:
         }
     }"""
 DATABASES = {
-            'default': {
-                'ENGINE': 'django.db.backends.postgresql_psycopg2',
-                'NAME': os.environ.get('QOVERY_DATABASE_BAKPAKERDB_NAME', 'bakpakerdb'),
-                'USER': 'postgres',
-                'PASSWORD': os.environ.get('QOVERY_DATABASE_BAKPAKERDB_PASSWORD', "DYgQalROKPY7a8Nh "),
-                'HOST': os.environ.get('QOVERY_DATABASE_BAKPAKERDB_HOST', 'bakpakerdb-htm0c7lp1oqr14qx-svc.qovery.io'),
-                'PORT':  5432,
-            }
-        }
+  'default': {
+    'ENGINE': 'django.db.backends.postgresql_psycopg2',
+    'NAME': os.environ.get('QOVERY_DATABASE_BAKPAKERDB_NAME', 'postgres'),
+    'USER': os.environ.get('QOVERY_DATABASE_BAKPAKERDB_USERNAME', 'postgres'),
+    'PASSWORD': os.environ.get('QOVERY_DATABASE_BAKPAKERDB_PASSWORD', 'DYgQalROKPY7a8Nh'),
+    'HOST': os.environ.get('QOVERY_DATABASE_BAKPAKERDB_HOST', 'bakpakerdb-htm0c7lp1oqr14qx-svc.qovery.io'),
+    'PORT': os.environ.get('QOVERY_DATABASE_BAKPAKERDB_PORT', 5432),
+  }
+}
 # Password validation
 # https://docs.djangoproject.com/en/3.1/ref/settings/#auth-password-validators
 

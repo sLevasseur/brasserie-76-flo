@@ -34,7 +34,7 @@ def main():
     dummy_dict_for_medias = {"src": "no_media", "type_of_media": "None"}
 
     test_number_of_post = compare_length_internal_data_to_facebook(length_of_json_data, number_of_posts, every_posts)   
-    if test_number_of_post is False:  # only run if there is a new useful post
+    if len(test_number_of_post) == 0:  # only run if there is a new useful post
         return 1
     else:
         for id_of_one_post in test_number_of_post:
@@ -75,7 +75,7 @@ def compare_length_internal_data_to_facebook(length_of_internal_data, length_fro
         else:
             list_of_id_post.append(post["id"])
     if length_of_internal_data == length_from_facebook - number_of_useless_post:
-        return False  # False if no new post
+        return list()  # False if no new post
     else:
         return list_of_id_post  # True if there is a difference
 
