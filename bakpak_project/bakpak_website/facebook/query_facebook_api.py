@@ -67,6 +67,7 @@ def main():
 def compare_length_internal_data_to_facebook(length_of_internal_data, length_from_facebook, every_post_from_facebook):
     number_of_useless_post = 0
     list_of_id_post = list()
+    empty_list = []
     for post in every_post_from_facebook:
         try:
             post["message"]
@@ -75,7 +76,7 @@ def compare_length_internal_data_to_facebook(length_of_internal_data, length_fro
         else:
             list_of_id_post.append(post["id"])
     if length_of_internal_data == length_from_facebook - number_of_useless_post:
-        return list()  # False if no new post
+        return empty_list  # False if no new post
     else:
         return list_of_id_post  # True if there is a difference
 
