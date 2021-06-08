@@ -88,16 +88,16 @@ WSGI_APPLICATION = 'bakpak_project.wsgi.application'
 
 # Database
 # https://docs.djangoproject.com/en/3.1/ref/settings/#databases
-"""if os.environ.get('QOVERY_IS_PRODUCTION') == "true":
+if os.environ.get('QOVERY_IS_PRODUCTION') == "true":
     DATABASES = {
             'default': {
                 'ENGINE': 'django.db.backends.postgresql_psycopg2',
-                'NAME': os.environ.get('QOVERY_DATABASE_BAKPAKDB_DATABASE', "postgres"),
-                'USER': os.environ.get('QOVERY_DATABASE_BAKPAKDB_USERNAME', "postgres"),
-                'PASSWORD': os.environ.get('QOVERY_DATABASE_BAKPAKDB_PASSWORD', "DtFVNqXEQLCZRSMH"),
-                'HOST': os.environ.get('QOVERY_DATABASE_BAKPAKDB_HOST', "bakpakdb-sakbm4dhgc8atckx-svc.qovery.io"),
-                'PORT': os.environ.get('QOVERY_DATABASE_BAKPAKDB_PORT', 5432),
-            },
+                'NAME': "bakpakerdb",
+                'USER': os.environ.get('QOVERY_DATABASE_BAKPAKERDB_USERNAME'),
+                'PASSWORD': os.environ.get('QOVERY_DATABASE_BAKPAKERDB_PASSWORD'),
+                'HOST': os.environ.get('QOVERY_DATABASE_BAKPAKERDB_HOST'),
+                'PORT': os.environ.get('QOVERY_DATABASE_BAKPAKERDB_PORT'),
+              }
         }
 else:
     DATABASES = {
@@ -109,17 +109,8 @@ else:
             'HOST': 'localhost',
             'PORT': '5432',
         }
-    }"""
-DATABASES = {
-  'default': {
-    'ENGINE': 'django.db.backends.postgresql_psycopg2',
-    'NAME': "bakpakerdb",
-    'USER': os.environ.get('QOVERY_DATABASE_BAKPAKERDB_USERNAME', 'postgres'),
-    'PASSWORD': os.environ.get('QOVERY_DATABASE_BAKPAKERDB_PASSWORD', 'DYgQalROKPY7a8Nh'),
-    'HOST': os.environ.get('QOVERY_DATABASE_BAKPAKERDB_HOST', 'bakpakerdb-htm0c7lp1oqr14qx-svc.qovery.io'),
-    'PORT': os.environ.get('QOVERY_DATABASE_BAKPAKERDB_PORT', 5432),
-  }
-}
+    }
+
 # Password validation
 # https://docs.djangoproject.com/en/3.1/ref/settings/#auth-password-validators
 
