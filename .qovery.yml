@@ -10,8 +10,8 @@ databases:
 routers:
   - name: main
     custom_domains:
-      -branch: master
-       domain: www.brasserie-bakapker.fr
+      - branch: main
+        domain: www.brasserie-bakpaker.fr
     routes:
       - application_name: brasserie-76-flo
         paths:
