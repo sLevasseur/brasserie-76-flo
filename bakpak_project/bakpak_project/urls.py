@@ -33,7 +33,7 @@ urlpatterns = [
         ),
 ] + static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
 
-admin.site.site_header = "Brasserie Bakapk"
-admin.site.site_title = "Administration Bakpak"
-admin.site.index_title = "Administration Bakpak"
+admin.site.site_header = "Brasserie Bakapker"
+admin.site.site_title = "Administration Bakpaker"
+admin.site.index_title = "Administration Bakpaker"
 admin.site.site_url = "/bakpak/"

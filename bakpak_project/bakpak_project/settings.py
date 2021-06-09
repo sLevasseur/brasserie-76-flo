@@ -32,7 +32,7 @@ SECRET_KEY = "3u-kpk1*1930@zj_vbt59xd9tt84zvnrq!%n7!&l=if_skybcn"
     DEBUG = True
 else:
     DEBUG = True"""
-DEBUG = False
+DEBUG = True
 
 """if os.environ.get('QOVERY_IS_PRODUCTION') == "true":
     ALLOWED_HOSTS = ["main-sihfszfwcfnhvxog-gtw.qovery.io", "*"]
@@ -148,7 +148,7 @@ MEDIA_ROOT = os.path.join(BASE_DIR, "media")
 EMAIL_HOST = "smtp.gmail.com"
 EMAIL_PORT = "587"
 EMAIL_HOST_USER = "simonphilippe.levasseur@gmail.com"
-EMAIL_HOST_PASSWORD = os.environ.get("MDPMAIL")
+EMAIL_HOST_PASSWORD = "loxutylnphiwypgr"
 EMAIL_USE_TLS = True
 EMAIL_BACKEND = 'django.core.mail.backends.smtp.EmailBackend'
 
