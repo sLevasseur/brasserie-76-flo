@@ -9,6 +9,9 @@ databases:
     version: "12.6.0"
 routers:
   - name: main
+    custom_domains:
+      -branch: master
+       domain: www.brasserie-bakapker.fr
     routes:
       - application_name: brasserie-76-flo
         paths:
