@@ -10,8 +10,6 @@ databases:
 routers:
   - name: main
     custom_domains:
-      - branch: main
-        domain: www.brasserie-bakpaker.fr
       - branch: master
         domain: www.brasserie-bakpaker.fr
     routes:
