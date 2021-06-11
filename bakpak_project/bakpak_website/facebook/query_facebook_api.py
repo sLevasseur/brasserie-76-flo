@@ -35,8 +35,10 @@ def main():
 
     test_number_of_post = compare_length_internal_data_to_facebook(length_of_json_data, number_of_posts, every_posts)   
     if len(test_number_of_post) == 0:  # only run if there is a new useful post
+        print("no new post")
         return 1
     else:
+        print("new post")
         for id_of_one_post in test_number_of_post:
             post_attachment = graph.get_connections(id=id_of_one_post, connection_name="attachments")
             post_main_info = graph.get_object(id=id_of_one_post)

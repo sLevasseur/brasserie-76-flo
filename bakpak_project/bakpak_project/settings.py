@@ -32,7 +32,7 @@ SECRET_KEY = "3u-kpk1*1930@zj_vbt59xd9tt84zvnrq!%n7!&l=if_skybcn"
     DEBUG = True
 else:
     DEBUG = True"""
-DEBUG = True
+DEBUG = False
 
 """if os.environ.get('QOVERY_IS_PRODUCTION') == "true":
     ALLOWED_HOSTS = ["main-sihfszfwcfnhvxog-gtw.qovery.io", "*"]
