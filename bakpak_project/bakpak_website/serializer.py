@@ -13,10 +13,12 @@ def get_gps_coordinates_and_more(coordinates):
         one_location.__setitem__("informations_supplementaires", location[5])
 
         str_location = "".join(location[6])
-        index_start = str_location.index("!3d")
-        index_end = str_location.index("!4d")
-        one_location.__setitem__("lat", str_location[index_start + 3: index_end])
-        one_location.__setitem__("long", str_location[index_end + 3: len(str_location)])
+        url_for_lat = str_location[str_location.index("!3d") + 3:] + "!"
+        url_for_long = str_location[str_location.index("!4d") + 3:] + "!"
+        lat = url_for_lat[:url_for_lat.index("!4d")]
+        long = url_for_long[:url_for_long.index("!")]
+        one_location.__setitem__("lat", lat)
+        one_location.__setitem__("long", long)
 
         coordinates_info.append(one_location)
 
