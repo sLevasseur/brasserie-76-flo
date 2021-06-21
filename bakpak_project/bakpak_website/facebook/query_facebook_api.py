@@ -4,8 +4,9 @@ import datetime
 import re
 from pathlib import Path
 # BEGIN : DECLARATION OF VARIABLES
-path_facebook_json = Path(__file__).parent / "facebook.json"
-path_post_data_json = Path(__file__).parent / "posts_data.json"
+path_facebook_json = Path(__file__).parent / "./facebook.json"
+path_post_data_json = Path(__file__).parent / "./posts_data.json"
+
 posts_data = dict()
 posts_data.__setitem__("data", list())
 
@@ -57,8 +58,11 @@ def main():
             make_data_as_json(make_dict_from_facebook(id_of_one_post, created_time, text_post, attachment_s_picture,
                                                       attachment_s_video, link_to_post))
 
-        with open(path_post_data_json, "w") as d:
-            json.dump(posts_data, d, indent=4)
+
+        out_file = open(path_post_data_json, "w")
+        #print(out_file)
+        json.dump(posts_data, out_file, indent=4, ensure_ascii=True)
+        out_file.close()
         return 0
 
 # END : USE OF FUNCTIONS
@@ -222,9 +226,7 @@ def make_dict_from_facebook(id_of_post, date_of_creation, text_of_post, all_pict
 def make_data_as_json(data_needed_from_one_post):
     posts_data["data"].append(data_needed_from_one_post)
 
-def dump_json():
-    with open("bakpak_website/facebook/posts_data.json", "r") as f:
-        facebook_posts = json.load(f)
 
-    return facebook_posts
 # END : DECLARATION OF FUNCTIONS
+
+print(main())

@@ -9,7 +9,7 @@ from pathlib import Path
 
 # get user, app, and page info
 class GeneralData:
-    path_facebook_json = Path(__file__).parent / "facebook.json"
+    path_facebook_json = Path(__file__).parent / "./facebook.json"
     with open(path_facebook_json, "r") as f:
         data = json.load(f)
 
