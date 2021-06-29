@@ -27,7 +27,6 @@ graph = facebook.GraphAPI(access_token=user_long_token, version="3.0")
 def main():
 
     length_of_json_data = len(facebook_API_data["data"])
-
     pages_data = graph.get_object(id=page_id, fields="posts")
 
     every_posts = pages_data["posts"]["data"]
@@ -40,6 +39,8 @@ def main():
         return 1
     else:
         print("new post")
+        """print(f"length of json data :{length_of_json_data}")
+        print(f"number of posts: {number_of_posts}")"""
         for id_of_one_post in test_number_of_post:
             post_attachment = graph.get_connections(id=id_of_one_post, connection_name="attachments")
             post_main_info = graph.get_object(id=id_of_one_post)

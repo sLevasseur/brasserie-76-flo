@@ -50,7 +50,9 @@ class Homepage(View):
         newsletter_form_post = emailsForNewsletter(request.POST)
         context = {"contact_form": contact_form_post,
                    "newsletter_form": newsletter_form_post,
-                   "map_positions": self.data_as_JSON
+                   "map_positions": self.data_as_JSON,
+                   "facebook_post": General_data.facebook_posts["data"][0],
+                   "check_picture": General_data.facebook_posts["data"][0]["all_picture_s"][0]["type_of_media"]
                    }
         if contact_form_post.is_valid() or newsletter_form_post.is_valid():
             if "contact_form" in request.POST:  # handling data from the contact form
