@@ -3,6 +3,7 @@ import json
 import datetime
 import re
 from pathlib import Path
+
 # BEGIN : DECLARATION OF VARIABLES
 path_facebook_json = Path(__file__).parent / "./facebook.json"
 path_post_data_json = Path(__file__).parent / "./posts_data.json"
@@ -19,13 +20,14 @@ with open(path_post_data_json, "r") as f:
     facebook_API_data = json.load(f)
 
 graph = facebook.GraphAPI(access_token=user_long_token, version="3.0")
+
+
 # END : DECLARATION OF VARIABLES
 
 
 # BEGIN : USE OF FUNCTIONS
 
 def main():
-
     length_of_json_data = len(facebook_API_data["data"])
     pages_data = graph.get_object(id=page_id, fields="posts")
 
@@ -33,14 +35,12 @@ def main():
     number_of_posts = len(pages_data["posts"]["data"])
     dummy_dict_for_medias = {"src": "no_media", "type_of_media": "None"}
 
-    test_number_of_post = compare_length_internal_data_to_facebook(length_of_json_data, number_of_posts, every_posts)   
+    test_number_of_post = compare_length_internal_data_to_facebook(length_of_json_data, number_of_posts, every_posts)
     if len(test_number_of_post) == 0:  # only run if there is a new useful post
         print("no new post")
         return 1
     else:
         print("new post")
-        """print(f"length of json data :{length_of_json_data}")
-        print(f"number of posts: {number_of_posts}")"""
         for id_of_one_post in test_number_of_post:
             post_attachment = graph.get_connections(id=id_of_one_post, connection_name="attachments")
             post_main_info = graph.get_object(id=id_of_one_post)
@@ -59,12 +59,11 @@ def main():
             make_data_as_json(make_dict_from_facebook(id_of_one_post, created_time, text_post, attachment_s_picture,
                                                       attachment_s_video, link_to_post))
 
-
         out_file = open(path_post_data_json, "w")
-        #print(out_file)
         json.dump(posts_data, out_file, indent=4, ensure_ascii=True)
         out_file.close()
         return 0
+
 
 # END : USE OF FUNCTIONS
 
@@ -114,11 +113,13 @@ def get_text_post_from_facebook(main_info_about_posts):
     else:
         return text
 
+
 def get_hypertext_from_text(text):
     url_to_match = "http[s]?://(?:[a-zA-Z]|[0-9]|[$-_@.&+]|[!*\(\),]|(?:%[0-9a-fA-F][0-9a-fA-F]))+"
     url_to_format = text[re.search(url_to_match, text).span()[0]:re.search(url_to_match, text).span()[1]]
 
     return text.replace(url_to_format, f'<a href="{url_to_format}" target="blank">{url_to_format}</a>')
+
 
 def get_all_video_s_from_facebook(media_of_post):
     all_video = list()
