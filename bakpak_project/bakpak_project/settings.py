@@ -13,6 +13,7 @@ import os
 from pathlib import Path
 # import dj_database_url
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
+import dj_database_url
 
 BASE_DIR = Path(__file__).resolve().parent.parent
 
@@ -29,7 +30,7 @@ else:
 
 # SECURITY WARNING: don't run with debug turned on in production!
 if os.environ.get('QOVERY_IS_PRODUCTION') == "true":
-    DEBUG = True
+    DEBUG = False
 else:
     DEBUG = True
 
