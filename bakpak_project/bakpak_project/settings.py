@@ -21,24 +21,24 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 
 # SECURITY WARNING: keep the secret key used in production secret!
 
-"""if os.environ.get('QOVERY_IS_PRODUCTION') == "true":
+if os.environ.get('QOVERY_IS_PRODUCTION') == "true":
     SECRET_KEY = os.environ.get("SECRET_KEY")
 else:
-    SECRET_KEY = 'm-k0yns$=f6hlgt2tcdo)w0fp9&+-_rc@__x=2n9nvgbrmf4ul'"""
-SECRET_KEY = "3u-kpk1*1930@zj_vbt59xd9tt84zvnrq!%n7!&l=if_skybcn"
+    SECRET_KEY = 'm-k0yns$=f6hlgt2tcdo)w0fp9&+-_rc@__x=2n9nvgbrmf4ul'
+
 
 # SECURITY WARNING: don't run with debug turned on in production!
-"""if os.environ.get('QOVERY_IS_PRODUCTION') == "true":
+if os.environ.get('QOVERY_IS_PRODUCTION') == "true":
     DEBUG = True
 else:
-    DEBUG = True"""
-DEBUG = False
+    DEBUG = True
 
-"""if os.environ.get('QOVERY_IS_PRODUCTION') == "true":
+
+if os.environ.get('QOVERY_IS_PRODUCTION') == "true":
     ALLOWED_HOSTS = ["main-sihfszfwcfnhvxog-gtw.qovery.io", "*"]
 else:
-    ALLOWED_HOSTS = ["127.0.0.1"]"""
-ALLOWED_HOSTS = ["main-qeni5vkqvpgdjyvi-gtw.qovery.io", "*"]
+    ALLOWED_HOSTS = ["127.0.0.1"]
+
 
 # Application definition
 
@@ -148,7 +148,7 @@ MEDIA_ROOT = os.path.join(BASE_DIR, "media")
 EMAIL_HOST = "smtp.gmail.com"
 EMAIL_PORT = "587"
 EMAIL_HOST_USER = "simonphilippe.levasseur@gmail.com"
-EMAIL_HOST_PASSWORD = "loxutylnphiwypgr"
+EMAIL_HOST_PASSWORD = os.environ.get("MAIL_APPP_ASSWD")
 EMAIL_USE_TLS = True
 EMAIL_BACKEND = 'django.core.mail.backends.smtp.EmailBackend'
 
