@@ -88,17 +88,8 @@ WSGI_APPLICATION = 'bakpak_project.wsgi.application'
 
 # Database
 # https://docs.djangoproject.com/en/3.1/ref/settings/#databases
-DATABASES = {
-  'default': {
-    'ENGINE': 'django.db.backends.postgresql_psycopg2',
-    'NAME': "bakpakerdb",
-    'USER': "postgres",
-    'PASSWORD': "DYgQalROKPY7a8Nh",
-    'HOST': "bakpakerdb-htm0c7lp1oqr14qx-svc.qovery.io",
-    'PORT': os.environ.get('QOVERY_DATABASE_MY_DB_PORT', 5432),
-  }
-}
-"""if os.environ.get('ENV') == "PRODUCTION":
+
+if os.environ.get('ENV') == "PRODUCTION":
     DATABASES = {
             'default': {
                 'ENGINE': 'django.db.backends.postgresql_psycopg2',
@@ -119,7 +110,7 @@ else:
             'HOST': 'localhost',
             'PORT': '5432',
         }
-    }"""
+    }
 
 # Password validation
 # https://docs.djangoproject.com/en/3.1/ref/settings/#auth-password-validators
@@ -178,9 +169,9 @@ INTERNAL_IPS = ["127.0.0.1"]
 STATICFILES_STORAGE = 'whitenoise.storage.CompressedManifestStaticFilesStorage'
 
 
-# if os.environ.get('QOVERY_IS_PRODUCTION') == "true":
+if os.environ.get('QOVERY_IS_PRODUCTION') == "true":
 
-"""PROJECT_ROOT = os.path.dirname(os.path.abspath(__file__))
+PROJECT_ROOT = os.path.dirname(os.path.abspath(__file__))
 STATIC_ROOT = os.path.join(PROJECT_ROOT, 'staticfiles')
 #places for collectstatic to find static files
 STATICFILES_DIRS = (
@@ -189,7 +180,7 @@ STATICFILES_DIRS = (
 STATICFILES_STORAGE = 'whitenoise.storage.CompressedManifestStaticFilesStorage'
 
 db_from_env = dj_database_url.config(conn_max_age=500)
-DATABASES["default"].update(db_from_env)"""
+DATABASES["default"].update(db_from_env)
 
 
 # dependencies  config (tinymce)
